@@ -5,6 +5,7 @@ import {
   isRole,
   outranks,
   ROLES,
+  ACTIONS,
   type Role,
 } from "@/lib/rbac";
 
@@ -44,7 +45,7 @@ describe("rbac.can", () => {
 describe("rbac.allowedActions", () => {
   it("returns a sorted, complete list for owner", () => {
     const actions = allowedActions("owner");
-    expect(actions).toHaveLength(7);
+    expect(actions).toHaveLength(ACTIONS.length);
     expect(actions).toEqual([...actions].sort());
   });
 
